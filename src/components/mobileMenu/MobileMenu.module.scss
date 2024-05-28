@@ -1,0 +1,110 @@
+//src/components/mobileMenu/MobileMenu.module.scss
+
+@import './../../styles/_mixins';
+@import './../../styles/_media';
+
+
+.mobile_overlay {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 14px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Змініть значення за потреби */
+    //   background-color: rgba(0, 0, 0, 0.5); /* Змініть кольори та прозорість за потреби */
+    display: none; /* Початкове значення, щоб меню було приховано */
+
+    &__close_button_wrapper {
+    display: flex;
+    justify-content: end;
+    }
+    &__list {
+        @include flex-center;
+
+        flex-direction: column;
+        row-gap: 30px;
+        min-height: 80vh;
+    }
+    }
+
+
+.cross_button{
+    @include reset-button;
+    @include square(48px);
+    position: relative;
+    border-radius: var(--border-radius-small);
+    right:48px;
+
+    @include hover{
+        background-color: var(--color-accent);
+    }
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 7px;
+        width: 70%;
+        height: 2px;
+        background-color: var(--color-dark);
+        border-radius: 5px;
+    }
+    &::before{
+        rotate: 45deg;
+    }
+    &::after {
+        rotate: -45deg;
+    }
+
+}
+
+.mobile_overlay.visible_mobile {
+  display: block; /* Показує меню, якщо isOpen=true */
+}
+
+
+
+// .mobile_overlay__close_button {
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+// }
+
+// .mobile_overlay__body {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   background-color: white; /* Змініть кольори за потреби */
+//   padding: 20px;
+//   border-radius: 10px; /* Змініть радіус кутів за потреби */
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Змініть тінь за потреби */
+// }
+
+// .header__menu_item {
+//   list-style-type: none;
+//   margin-bottom: 10px;
+// }
+
+// .header__menu_link {
+//   text-decoration: none;
+//   color: black; /* Змініть кольори тексту за потреби */
+// }
+
+// .cross_button {
+//   position: relative;
+// }
+
+// .visually_hidden {
+//   position: absolute;
+//   width: 1px;
+//   height: 1px;
+//   margin: -1px;
+//   padding: 0;
+//   overflow: hidden;
+//   clip: rect(0, 0, 0, 0);
+//   border: 0;
+// }

@@ -1,0 +1,43 @@
+ @import './../../styles/blocks/_section.scss';
+@import './../../styles/_media.scss';
+// @import './../../styles/_variables.scss';
+ 
+ .partners {
+        &_list {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 37px;
+
+            @include tablet {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 20px;
+            }
+
+            @include mobile-s {
+                --heroPartnersWithOffsetX: 60px;
+                --totalOffset: calc(var(--heroPartnersWithOffsetX) * 2);
+
+                column-gap: 0;
+                width: calc(100vw + var(--totalOffset));
+                margin-left: calc((var(--heroPartnersWithOffsetX) + var(--container-padding-x)) * -1);
+            }
+
+            &_item {
+                @include tablet {
+                    display: flex;
+                    justify-content: center;
+                }
+                @include mobile-s {
+                    justify-content: start;
+
+                    &:nth-child(-n + 3) {
+                        justify-content: end;
+                    }
+                }
+            }
+        }
+        &_image {
+            filter: grayscale(1);//черно-белое изображение
+        }
+    }

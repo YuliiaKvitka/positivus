@@ -1,0 +1,216 @@
+//src/components/footer/Footer.module.scss
+
+@import './../../styles/blocks/_section.scss';
+@import './../../styles/media';
+@import './../../styles/mixins';
+@import './../../styles/utils';
+@import './../../styles/blocks/field';
+
+
+.footer {
+
+    @include mobile {
+        padding-inline: 0;
+    }
+
+    &__inner {
+        padding: 55px 60px 50px;
+        color: var(--color-light);
+        background-color: var(--color-dark);
+
+        @include mobile-above {
+        border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            row-gap: 37px;
+            padding: 50px var(--container-padding-x) 30px;
+            align-items: center;
+        }
+    }
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 30px;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 37px;
+        }
+        @include mobile {
+            display: contents;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 66px;
+        }
+    }
+
+    // &__menu {
+    //     &_list {
+    //         display: flex;
+    //         align-items: center;
+    //         column-gap: 40px;
+
+    //         @include mobile {
+    //             flex-direction: column;
+    //             row-gap: 15px;
+    //         }
+    //     }
+
+    //     &_link {
+    //         display: inline-flex;
+    //         text-decoration: underline;
+    //         align-items: center;
+    //         height: 30px;
+
+    //         @include hover {
+    //             color: var(--color-accent);
+    //         }
+    //     }
+    // }
+        // &__soc1als {
+
+        //     @include mobile {
+        //         order: 1;
+        //     }
+        // }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 50px;
+
+
+    @include mobile-above {
+        &:not(:last-child) {
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid currentColor;
+        }
+    }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            row-gap: inherit;
+        }
+
+        @include mobile-s {
+            width: 100%;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 27px;
+
+        @include mobile {
+            align-items: center;
+            text-align: center;
+        }
+
+        &_title {
+            color: var(--color-dark);
+        }
+
+        &_body {
+            display: flex;
+            flex-direction: column;
+            font-style: normal;
+            row-gap: 20px;
+
+            a {
+            @include hover {
+                color: var(--color-accent);
+            }
+        }
+        }
+    }
+
+    &__extra {
+        display: flex;
+        column-gap: 40px;
+
+        @include mobile {
+            order: 2;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 15px;
+            width: 100%;
+            padding-top: 37px;
+            border-top: 1px solid currentColor;
+        }
+    }
+
+    &__privasy_police_link {
+        text-decoration: underline;
+
+        @include hover {
+            color: var(--color-accent);
+        }
+    }
+}
+
+// -----------------
+
+// .soc1als {
+
+//     &__list {
+//         display: flex;
+//         column-gap: 20px;
+//     }
+
+//     &__link {
+
+//         @include flex-center(true);
+//         @include square(30px);
+
+//         color: var(--color-dark);
+//         background-color: var(--color-light);
+//         border-radius: 50%;
+//         transition-duration: var(--transition-duration);
+
+//         @include hover {
+//             background-color: var(--color-accent);
+//         }
+        
+
+//         svg {
+//             width: 50%;
+//             height: 50%;
+//         }
+//     }
+// }
+
+// ----------------------------
+
+// .subscribe_form {
+//     // width: 100%;
+//     // max-width: 634px;
+//     display: flex;
+//     column-gap: 20px;
+//     padding: 58px 40px;
+//     background-color: var(--color-dark-alt);
+//     border-radius: var(--border-radius);
+
+//     @include desktop {
+//         flex-direction: column;
+//         row-gap: 22px;
+//         padding: 30px;
+//         width: 100%;
+//         max-width: 450px;
+//     }
+// }
+
+
+
+
+
+

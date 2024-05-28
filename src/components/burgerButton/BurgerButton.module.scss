@@ -1,0 +1,33 @@
+// Импорт всех глобальных стилей и переменных
+// @import './../../styles/variables';
+@import './../../styles/_mixins';
+@import './../../styles/_media';
+// @import './../../styles/normalize';
+// @import './../../styles/globals';
+@import './../../styles/utils';
+// @import './../../styles/blocks/_button';
+
+.burger_button {
+    @include reset-button;
+    @include square(48px); //полоски меню будут 50% от ширины макета 48/2=24px
+
+    position: relative;
+    border-radius: var(--border-radius-small);
+
+    @include hover {
+        background-color: var(--color-accent);
+    }
+
+
+    &::after {
+        @include abs-center; //для абсолютного позиционирования
+        content: '';
+        width: 50%;
+        height: 2px;
+        background-color: var(--color-dark);
+        border-radius: 5px;
+        //рисование еще двух полосок бургера
+        box-shadow: 0 -8px, 0 8px; //получается еще две полоски, всего три полоски
+    }
+    
+}
